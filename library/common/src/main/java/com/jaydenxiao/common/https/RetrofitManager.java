@@ -90,6 +90,7 @@ public class RetrofitManager {
         File cacheFile = new File(BaseApplication.getAppContext().getCacheDir(), "cache");
         Cache cache = new Cache(cacheFile, 1024 * 1024 * 100); //100Mb
         //增加头部公共信息
+        final String authorization = "加密";
         Interceptor headerInterceptor = new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
@@ -98,6 +99,7 @@ public class RetrofitManager {
                         .header("secretKey", RSAEncyptUtil.getKeyByRSAandAESEncypt(JsonRequestBodyConverter.KEY))//秘钥
                         .header("systemId", "MPP")//类型
                         .header("SerialNumber", UUIDUtil.simpleHex())//类型
+                        .header("authorization", authorization)
                         .build();
                 return chain.proceed(build);
             }

@@ -71,7 +71,7 @@ public class WorkMainActivity extends BaseActivity {
         //设置头像、姓名编号
         ImageLoaderUtils.displayAvatar(this, imgAvatar, "");
         tvName.setText(FormatUtil.checkValue(""));
-        tvCode.setText(FormatUtil.checkValue(user.getUserId()));
+//        tvCode.setText(FormatUtil.checkValue(user.getUserId()));
         //初始化适配器
         adapter = new CommonRecycleViewAdapter<WorkMenuEntity>(this, R.layout.item_work_memu, getWorkMenuList()) {
             @Override

@@ -23,6 +23,7 @@ android {
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
     }
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {

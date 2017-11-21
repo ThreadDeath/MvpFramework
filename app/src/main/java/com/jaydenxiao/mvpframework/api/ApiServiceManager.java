@@ -37,9 +37,6 @@ public class ApiServiceManager {
         return ApiServiceManager.SingletonHolder.INSTANCE;
     }
 
-
-
-
     /**
      * 登录
      *
@@ -54,7 +51,7 @@ public class ApiServiceManager {
         loginInfo.put("pass", "11");
         loginInfo.put("deviceType","MO");
         loginInfo.put("unitCode","320200");
-        return service.requestLogin(URL_LOGIN, loginInfo.toString());
+        return service.requestLogin(URL_LOGIN);
     }
 
     /**

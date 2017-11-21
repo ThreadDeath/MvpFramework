@@ -10,16 +10,8 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     private String token;
-    private String imToken;
-    private String userId;
-    private String account;
-    private String sysCode;
-    private String tokenTime;
-    private String randomVal;
-    private String effectiveTime;
-    private String invalidTime;
-    private String createDate;
-    private String hisignPn;
+    private String username;
+    private String telephone;
 
     public String getToken() {
         return token;
@@ -29,85 +21,19 @@ public class User implements Serializable {
         this.token = token;
     }
 
-    public String getImToken() {
-        return imToken;
+    public String getUsername() {
+        return username;
     }
 
-    public void setImToken(String imToken) {
-        this.imToken = imToken;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
-
-    public String getAccount() {
-        return account;
-    }
-
-    public void setAccount(String account) {
-        this.account = account;
-    }
-
-    public String getSysCode() {
-        return sysCode;
-    }
-
-    public void setSysCode(String sysCode) {
-        this.sysCode = sysCode;
-    }
-
-    public String getTokenTime() {
-        return tokenTime;
-    }
-
-    public void setTokenTime(String tokenTime) {
-        this.tokenTime = tokenTime;
-    }
-
-    public String getRandomVal() {
-        return randomVal;
-    }
-
-    public void setRandomVal(String randomVal) {
-        this.randomVal = randomVal;
-    }
-
-    public String getEffectiveTime() {
-        return effectiveTime;
-    }
-
-    public void setEffectiveTime(String effectiveTime) {
-        this.effectiveTime = effectiveTime;
-    }
-
-    public String getInvalidTime() {
-        return invalidTime;
-    }
-
-    public void setInvalidTime(String invalidTime) {
-        this.invalidTime = invalidTime;
-    }
-
-    public String getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
-    }
-
-    public String getHisignPn() {
-        return hisignPn;
-    }
-
-    public void setHisignPn(String hisignPn) {
-        this.hisignPn = hisignPn;
-    }
-
-
 }

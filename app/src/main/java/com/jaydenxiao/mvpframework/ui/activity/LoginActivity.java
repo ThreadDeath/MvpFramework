@@ -141,6 +141,9 @@ public class LoginActivity extends BaseActivity<LoginContract.View,LoginPresente
 
     @Override
     public void loginSuccess() {
+
+
+
         startActivity(WorkMainActivity.class);
         finish();
     }

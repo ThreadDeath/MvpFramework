@@ -17,6 +17,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.PartMap;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 import retrofit2.http.Streaming;
 import retrofit2.http.Url;
 import rx.Observable;
@@ -29,10 +30,14 @@ import rx.Observable;
 public interface ApiService {
 
 
-    @POST("{url}")
+    @GET("token/{url}")
     Observable<User> requestLogin(
             @Path("url") String url,
-            @Body String string);
+            @Query("timestamp") String timestamp,
+            @Query("app_key") String app_key,
+            @Query("signature") String signature
+
+         );
 
     /**
      * 上传多文件

@@ -77,7 +77,8 @@ public abstract class BaseActivity<V extends BaseView, P extends BasePresenter> 
         setContentView(getLayoutId());
         ButterKnife.bind(this);
         mContext = this;
-        mPresenter = TUtil.getT(this, 0);
+        //第0个泛型是view,第1个泛型才是presenter
+        mPresenter = TUtil.getT(this, 1);
         mView=this.attachPresenterView();
         if (mPresenter != null) {
             mPresenter.mContext = this;
