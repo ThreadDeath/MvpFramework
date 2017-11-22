@@ -2,6 +2,7 @@ package com.jaydenxiao.common.https;
 
 
 import android.text.TextUtils;
+import android.util.Base64;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -90,7 +91,15 @@ public class RetrofitManager {
         File cacheFile = new File(BaseApplication.getAppContext().getCacheDir(), "cache");
         Cache cache = new Cache(cacheFile, 1024 * 1024 * 100); //100Mb
         //增加头部公共信息
-        final String authorization = "加密";
+//        final String authorization = "加密";
+
+        String app_key = "a1000";
+        String access_token = "1000";
+        String user_id = "1000";
+        String str = app_key+":"+access_token+":"+user_id;
+
+
+        final String authorization = Base64.encodeToString(str.getBytes(), Base64.NO_WRAP);
         Interceptor headerInterceptor = new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
@@ -100,6 +109,7 @@ public class RetrofitManager {
                         .header("systemId", "MPP")//类型
                         .header("SerialNumber", UUIDUtil.simpleHex())//类型
                         .header("authorization", authorization)
+                        .addHeader("timestamp", System.currentTimeMillis()/1000+"")
                         .build();
                 return chain.proceed(build);
             }
